@@ -2,6 +2,7 @@ var login = false;
 
 $(document).ready(function(){
 	$('h1').fitText(0.8);
+	$('h2').fitText(3);
 }); 
 
 $(window).load(function(){

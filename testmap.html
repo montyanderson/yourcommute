@@ -23,25 +23,19 @@
     var check_load = false;
     var waypts = [];
     var check_no_input = true;
-    var startloc = new google.maps.LatLng(50.860916, -0.084295);
-
-    function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        console.log("No support");
-    }
-  }
-
-    function showPosition(position) {
-      startloc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    }
+    var startloc = new google.maps.LatLng(51.5000, 0.1167);
 
     function initialize() {
       var rendererOptions = {
         draggable: true
       };
       directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+      if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function (position) {
+             startloc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+             map.setCenter(startloc);
+         });
+     }
       var mapOptions = {
         zoom:13,
         center: startloc,
@@ -124,7 +118,7 @@
     google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
-  <body onload="getLocation();">
+  <body>
     <form action="#">
     start:<input type="text" id="start" class="instyle"><br />
     end:<input type="text" id="end" class="instyle"><br />

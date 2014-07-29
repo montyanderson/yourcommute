@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Test preferences</title>
+	<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+	<script>
+	function trigger() {
+		console.log("hey");
+		$(".radio").show();
+	}
+
+	</script>
+	<style>
+	.radio {
+		visibility:hidden;
+	}
+	</style>
+</head>
+<body>
+	<select onchange="trigger">
+		<option>Car</option>
+		<option>Walk</option>
+		<option>Cycle</option>
+		<option>Public transport</option>
+	</select>
+	<div class="radio" style="visibility:hidden;">
+	<input type="radio" name="sex" value="male">Male<br>
+	<input type="radio" name="sex" value="female">Female
+	</div>
+
+
+</body>
+</html>

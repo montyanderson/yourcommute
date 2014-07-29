@@ -1,34 +1,48 @@
 <!DOCTYPE HTML>
-
 <html>
 	<head>
 		<meta charset = "UTF-8">
 		<title>yourcommute</title>
-		<link rel="stylesheet" href="lib/animate.css/animate.min.css">
-		<link rel="stylesheet" type="text/css" href="lib/normalize.css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+		
+		<link rel="stylesheet" href="lib/animate.css/animate.min.css" />
+		<link rel="stylesheet" href="lib/normalize.css/normalize.css" />
+		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/temp.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src = "lib/FitText.js/jquery.fittext.js"></script>
+		<script src="lib/FitText.js/jquery.fittext.js"></script>
+		<script src="lib/jquery.transit/jquery.transit.js"></script>
 		<script src="js/ajax.js"></script>
-		<script type = "text/javascript" src = "js/script.js"></script>
-		<script src = "lib/jquery.transit/jquery.transit.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/resize.js"></script>
+		
 	</head>
 	
 	
 	<body>
 		<div id = "background"></div>
-		<div id = 'container'>
+		<div id = "container">
+		
 			<div id = "header">
-				<h1>yourcommute</h1>
+				<h1>yourcommu<i class="fa fa-tree"></i>e</h1>
 			</div>
 
 			<div id = "logon">
 				<a href = "php/login.php" class = "facebook_link">Log in With Facebook</a>
 			</div>
 			
+			<h1><i id="truck" class="fa fa-truck animated fadeInRightBig"></i></h1>
 			
+			<div id="post-login" style="display:none;">
+				<!---This div doesn't appear until the user has logged in--->
+				
+				<h2 id="profile-name">John Doe</h1>
+				
+				<div id="profile-picture" >fdgfg</div>
+				
+			</div>
+			
+		</div>
 	</body>
-
-
 </html>

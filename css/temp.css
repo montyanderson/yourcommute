@@ -1,0 +1,23 @@
+* {
+	color: white;	
+}
+
+#post-login, #post-login > * {
+	margin: 0;
+	padding: 0;
+}
+
+#profile-picture {
+	width: 200px;
+	height: 179px;
+	
+	border-radius: 1em;
+}
+
+#profile-picture {
+	-webkit-filter: blur(2px);
+}
+
+#truck {
+	float: left;	
+}
