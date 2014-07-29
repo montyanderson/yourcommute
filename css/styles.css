@@ -55,5 +55,9 @@ li {
 	list-style-type: none;
 	padding: 1%;
 	border: 1px solid black;
-	display: inline-block;
+	display: block;
+	margin: 0 10%;
+	width: 35%;
+	font-size: 200%;
+	text-align: center;
 }
