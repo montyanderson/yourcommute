@@ -1,0 +1,59 @@
+body{
+	width: 100%;
+	background-color:#505050;
+	transition: background 1s linear;
+	position: relative;
+	background-image: url(../img/Blur-4.png);
+	background-size: 100%;
+
+}
+
+#header {
+	margin: 10% auto 10% auto;
+	width: 80%;
+	text-align: center;
+	color: white;
+}
+
+
+#logon{
+  background: #3B5998;
+  font-size: 100%;
+  padding: 1%;
+  width: 20%;
+  margin:0 auto;
+  text-align: center;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+	 
+	}
+
+
+#logon:hover{
+	background: #4B5998;
+}
+	
+#logon > a{
+  -moz-text-shadow: 0px 1% 0px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+#background {
+	max-width: 100%;
+	max-height: 100%;
+	background-color: green;
+}
+
+h1 {
+	margin: 0;
+}
+
+li {
+	list-style-type: none;
+	padding: 1%;
+	border: 1px solid black;
+	display: inline-block;
+}
