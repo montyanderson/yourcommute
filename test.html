@@ -21,22 +21,25 @@
 		
 		
 		
+		
 	</head>
 	
 	<body>
 		<button id="button">Click Me</button>
-		<div id="empty"></div>
+		<form action="" id = "empty">
+		
+		</form>
 		
 		<script>
 			$('#button').click(function(){
 				console.log("clicked");
-				$.getJSON('php/manufactures.php', function(data){
+				$.getJSON('php/manufacturers.php', function(data){
 					console.log(data);
-					var statusHTML = "<ul class = 'cars'>";
+					var statusHTML = "<select name = 'cars'>";
 					$.each(data, function(index, manufactures){
-						 statusHTML += "<li>"+manufactures+"</li>"
+						 statusHTML += "<option value=\'"+manufactures+"\'>"+manufactures+"</option>";
 					});
-					 statusHTML += "</ul>";
+					 statusHTML += "</select>";
 					console.log(statusHTML);
 					$("#empty").html(statusHTML);
 				});

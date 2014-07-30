@@ -1,5 +1,18 @@
 <?php
-header("Content-type: text/plain");
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
+
 include("mongo.php");
-$man = $_GET[""];
-?>
+header("Content-type: text/plain");
+$manufacturer = $_GET["manufacturer"];
+$manufacturer = strtoupper($manufacturer);
+
+$models = array();
+
+$cursor = $cars->find(array("Manufacturer"=>$manufacturer));
+foreach ($cursor as $doc) {
+    $models[] = $doc;
+}
+
+var_dump($models);

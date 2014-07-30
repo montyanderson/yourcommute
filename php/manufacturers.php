@@ -28,4 +28,3 @@ $Manufacturers = array_filter($Manufacturers); //Remove any blanks
 sort($Manufacturers);
 
 echo json_encode($Manufacturers);
-?>

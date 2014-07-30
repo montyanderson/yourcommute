@@ -1,0 +1,9 @@
+<?php
+include("mongo.php");
+header("Content-type: text/plain");
+include("mongo.php");
+$manufacturer = $_GET["manufacturer"];
+$manufacturer = strtoupper($manufacturer);
+
+
+
