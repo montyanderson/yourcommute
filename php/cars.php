@@ -15,4 +15,5 @@ foreach ($cursor as $doc) {
     $models[] = $doc;
 }
 
-var_dump($models);
+$json = json_encode($models);
+echo $json;

@@ -1,1 +1,52 @@
-<!DOCT
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>yourcommute</title>
+		
+		<link rel="stylesheet" href="lib/animate.css/animate.min.css" />
+		<link rel="stylesheet" href="lib/normalize.css/normalize.css" />
+		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/temp.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		
+
+		
+		<script src="lib/jquery/jquery.min.js"></script>
+		<script src="lib/jquery-cookie/src/jquery.cookie.js"></script>
+		<script src="lib/FitText.js/jquery.fittext.js"></script>
+		<script src="lib/jquery.transit/jquery.transit.js"></script>
+		    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgjJ8ZIxlOYpJ9WNfgtLgCjlEQ2Mf_GRE&libraries=places&v=3.exp">
+		<script src="js/ajax.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/resize.js"></script>
+		
+	</head>
+	
+	
+	<body>
+		<div id = "background"></div>
+		<div id = "container">
+		
+			<div id = "header">
+				<h1>yourcommu<i class="fa fa-tree"></i>e</h1>
+			</div>
+
+			<div id = "logon">
+				<a href = "php/login.php" class = "facebook_link"> <i class="fa fa-facebook-square"></i> Log in With Facebook</a>
+			</div>
+			
+			<div id="post-login" style="display:none;">
+				<!---This div doesn't appear until the user has logged in---->
+				
+				<h2 id="profile-name">John Doe</h1>
+				
+			</div>
+			
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+	</body>
+</html>

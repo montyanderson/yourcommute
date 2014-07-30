@@ -1,0 +1,17 @@
+<form action="#">
+start:<input type="text" id="start" class="instyle"><br />
+end:<input type="text" id="end" class="instyle"><br />
+<select id="transport">
+  <option value="DRIVING">Drive</option>
+  <option value="BICYCLING">Cycle</option>
+  <option value="TRANSIT">Public transport route</option>
+  <option value="WALKING">Walk</option>
+</select>
+<input type="button" value="Calculate route" onclick="calcRoute();" id="calcroute">
+</form>
+<div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+<div id="prop">
+<p class="">Total Distance: <span id="total"></span></p>
+<p>Total carbon: <span id="total_c"></span></p>
+<p>Fuel Cost: <span id="money_save"></span></p>
+</div> 

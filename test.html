@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="css/temp.css" />
 		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="lib/chosen.css" />
 		
 		
 		<script src="lib/jquery/jquery.min.js"></script>
@@ -18,32 +19,50 @@
 		<script src="js/ajax.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/resize.js"></script>
-		
+		<script src = "lib/chosen.jquery.js"></script>
 		
 		
 		
 	</head>
 	
 	<body>
-		<button id="button">Click Me</button>
-		<form action="" id = "empty">
-		
-		</form>
+			<div id = "car_wrapper">
+				<div id="car_dropdown"></div>
+				<div id = "chosen_car"></div>
+			</div>
 		
 		<script>
-			$('#button').click(function(){
-				console.log("clicked");
-				$.getJSON('php/manufacturers.php', function(data){
-					console.log(data);
+			
+			 function startCarSearch(){
+			 $.getJSON('php/manufacturers.php', function(data){
 					var statusHTML = "<select name = 'cars'>";
 					$.each(data, function(index, manufactures){
 						 statusHTML += "<option value=\'"+manufactures+"\'>"+manufactures+"</option>";
 					});
 					 statusHTML += "</select>";
-					console.log(statusHTML);
-					$("#empty").html(statusHTML);
-				});
+					$("#car_dropdown").html(statusHTML);
+					
+					$('select[name=cars]').chosen({width: "100%"});;
+					
+					$('select[name=cars]').on('change', function(evt, params) {
+				   		 console.log(params)
+				   		 console.log(evt)
+				   		 var user_make = params.selected;
+				   		 $("#car_dropdown").fadeOut(1000);
+				   		 $("#chosen_car").hide().html('<p>'+user_make+'</p>').fadeIn(1000);
+				   		 
+				   		 
+				   		 $.getJSON('php/cars.php?manufacturer='+user_make, function(data){
+				   		 	console.log(data);
+			   		 		});
+			   		 
+					});
 				
+				});
+			 }
+			 
+			 $('doucme').ready(function(){
+				startCarSearch();
 			});
 		</script>
 	</body>

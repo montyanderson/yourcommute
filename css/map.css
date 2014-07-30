@@ -1,0 +1,11 @@
+#map-canvas {
+	height: 100%;
+	margin: 0px;
+	padding: 0px
+}
+.instyle {
+	width:50%;
+}
+#prop {
+	display:none;
+} 

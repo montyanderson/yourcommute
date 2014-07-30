@@ -48,4 +48,3 @@ if ($user) {
 	$loginUrl = $facebook->getLoginUrl();
 	header("Location: ".$loginUrl);
 }
-?>
