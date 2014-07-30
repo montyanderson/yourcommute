@@ -1,26 +1,27 @@
 var user;
 
+var new_user = $.cookie('new_user')
+console.log(new_user)
 function profile() {
 	$.ajax({
 		url: "php/profile.php",
 		success: function(result) {
 			user = JSON.parse(result);
-			$("#profile-name").text(user.name);
-			$("#profile-picture").css("background", "url(https://graph.facebook.com/" + user.id + "/picture?type=large)");
+			
+			
+			if (new_user === true){
+				$("#profile-name").text("Welcome to this website, "+user.name+".");
+			}else{
+				$("#profile-name").text("Welcome back, "+user.name+".");
+			}
 		}
 	});
 	
-	$("#truck").css({
-		"display" : "none"
-	})
 	
-	$("#header").css({
-		"margin-bottom": "4em"	
-	});
 	
 	$("#post-login").css({
 		"display":"inline-block"	
-	});
+	}), 1000, 'swing';
 	
-	$('h2').fitText(3);
+	$('h2').fitText(4);
 }

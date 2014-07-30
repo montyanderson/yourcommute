@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$('h1').fitText(0.8);
 	$('h2').fitText(3);
 	$('#logon').fitText(0.8); //made the button fittext
+	$("h3").fitText(7);
 }); 
 
 $(window).load(function(){
@@ -20,6 +21,11 @@ $(window).load(function(){
 			$("#header").animate({
 				'margin-top': 0
 			}, 1000, 'swing');
+			
+			$('#smaller').animate({
+				'margin-top': '0.25%'
+				 
+			},1000, 'swing');
 			
 		
 		}

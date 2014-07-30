@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
+//ini_set('display_errors',1);
+//ini_set('display_startup_errors',1);
+//error_reporting(-1);
 
 include("keys.php");
 include(dirname(dirname(__FILE__))."/lib/facebook-php-sdk/src/facebook.php");
@@ -30,12 +30,18 @@ if ($user) {
 	
 	$status;	
 	
+	$new_user;
+	
 	if($exists == false) {
 		$users->insert($profile);
 		$status = "New User";
+		$new_user = "true";
 	} else {
-		$status = "Old User";	
+		$status = "Old User";
+		$new_user= "false";
 	}
+	
+	setcookie("new_user", $new_user, "0", "/");
 	
 	header("Location: /#login?".$status);
 } else {

@@ -10,7 +10,6 @@
 		<link rel="stylesheet" href="css/temp.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		
-
 		
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="lib/jquery-cookie/src/jquery.cookie.js"></script>
@@ -20,36 +19,31 @@
 		<script src="js/script.js"></script>
 		<script src="js/resize.js"></script>
 		
+		
+		
 	</head>
 	
-	
 	<body>
-		<div id = "background"></div>
-		<div id = "container">
+		<button id="button">Click Me</button>
+		<div id="empty"></div>
 		
-			<div id = "header">
-				<h1>y<i class="fa fa-recycle" id = "smaller"></i>urcommute</h1>
-			</div>
-
-			<div id = "logon">
-				<a href = "php/login.php" class = "facebook_link"> <i class="fa fa-facebook-square"></i> Log in With Facebook</a>
-			</div>
-			
-			<div id="post-login" style="display:none;">
-				<!---This div doesn't appear until the user has logged in---->
+		<script>
+			$('#button').click(function(){
+				console.log("clicked");
+				$.getJSON('php/manufactures.php', function(data){
+					console.log(data);
+					var statusHTML = "<ul class = 'cars'>";
+					$.each(data, function(index, manufactures){
+						 statusHTML += "<li>"+manufactures+"</li>"
+					});
+					 statusHTML += "</ul>";
+					console.log(statusHTML);
+					$("#empty").html(statusHTML);
+				});
 				
-				<h2 id="profile-name">John Doe</h1>
-				
-			</div>
-			
-		</div>
-		
-		<div id="footer">
-			<h3>Made by
-				<a href="http://montyanderson.co.uk">Monty Anderson </a>,
-				<a href="joe.fm">Joe FM</a> 
-				<a href="#">Jacob Cons</a>
-			</h3>
-		</div>
+			});
+		</script>
 	</body>
+
+
 </html>

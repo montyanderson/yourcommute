@@ -24,6 +24,10 @@
     var waypts = [];
     var check_no_input = true;
     var startloc = new google.maps.LatLng(51.5000, 0.1167);
+    var latte_price = 2.85;
+    var carbon_p_km = 160;
+    var kmpg = 80 * 1.609344;
+    var p_litre = 130;
 
     function initialize() {
       var rendererOptions = {
@@ -113,7 +117,11 @@
         total += myroute.legs[i].distance.value;
       }
       total = total / 1000.
+      var total_co2 = total * carbon_p_km;
+      var latte_no = (total / kmpg) * 4.54609 * (p_litre / 100);
       document.getElementById("total").innerHTML = total + " km";
+      document.getElementById("total_c").innerHTML = total_co2 + " g";
+      document.getElementById("Lattes").innerHTML = latte_no;
     }
     google.maps.event.addDomListener(window, 'load', initialize);
     </script>
@@ -132,5 +140,7 @@
     </form>
     <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
     <p>Total Distance: <span id="total"></span></p>
+    <p>Total carbon: <span id="total_c"></span></p>
+    <p>Starbuck Lattes: <span id="Lattes"></span></p>
   </body>
 </html>

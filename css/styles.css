@@ -8,12 +8,12 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-   background-size: 100% 100%; //monty put dis here works lak
+   background-size: 100% 100%;
 
 }
 
 #header {
-	margin: 10% auto 10% auto;
+	margin: 5% auto 2.5% auto;
 	width: 80%;
 	text-align: center;
 	color: white;
@@ -25,7 +25,7 @@ body{
   font-size: 100%;
   padding: 1%;
   width: 20%;
-  margin:0 auto;
+  margin:10% auto;
   text-align: center;
 
   -webkit-border-radius: 5px;
@@ -40,7 +40,6 @@ body{
 }
 	
 #logon > a{
-  -moz-text-shadow: 0px 1% 0px rgba(0, 0, 0, 0.3);
   color: white;
   text-decoration: none;
 }
@@ -65,3 +64,4 @@ li {
 	font-size: 200%;
 	text-align: center;
 }
+
