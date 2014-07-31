@@ -10,18 +10,15 @@ function profile() {
 			
 			
 			if (new_user === true){
-				$("#profile-name").text("Welcome to this website, "+user.name+".");
+				$("#profile-name").text("Welcome to this website, "+user.name+". Please input your car information");
 			}else{
-				$("#profile-name").text("Welcome back, "+user.name+".");
+				$("#profile-name").text("Welcome back, "+user.name+". Please input your car information");
 			}
 		}
 	});
 	
 	
 	
-	$("#post-login").css({
-		"display":"inline-block"	
-	}), 1000, 'swing';
-	
+	$("#after-login").fadeIn(1000).css('display', 'block')
 	$('h2').fitText(4);
 }

@@ -1,9 +1,11 @@
+
+
 body{
 	width: 100%;
 	background-color:#505050;
 	transition: background 1s linear;
 	position: relative;
-	background: url(../img/Blur-4.png) no-repeat center center fixed; 
+	background: url(../img/Optimized-Blur-4.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,10 +30,6 @@ body{
   margin:10% auto;
   text-align: center;
 
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-	 
 	}
 
 
@@ -54,13 +52,23 @@ h1 {
 	margin: 0;
 }
 
-#car_wrapper {
-	position: relative;
-	width: 100%;
+#car_dropdown,  #make_dropdown{
+				width: 100%;
+			}
+
+#chosen_make, #chosen_car {
+	margin-right: 15%;
 }
 
-#car_dropdown, #chosen_car {
-	position: absolute;
+#car_container {
+	margin: auto;
+	width: 60%;
+	padding: 0;
+	display: block;
+	text-align: center;
+
+			}
+#plus {
+	display: none;
+	margin-right: 5%;
 }
-
-

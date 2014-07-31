@@ -1,11 +1,17 @@
 #map-canvas {
 	height: 100%;
 	margin: 0px;
-	padding: 0px
+	padding: 0px;
+	float:left;
+	width:70%;
 }
 .instyle {
 	width:50%;
 }
 #prop {
 	display:none;
+	float:right;
 } 
+#map {
+	height:400px;
+}

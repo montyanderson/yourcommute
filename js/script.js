@@ -1,37 +1,76 @@
+var car;
 var login = false;
  function startCarSearch(){
 			 $.getJSON('php/manufacturers.php', function(data){
-					var statusHTML = "<select name = 'cars'>";
+					var statusHTML = "<select name = 'cars' data-placeholder='Choose your car make.'>";
+					statusHTML+= "<option></option>";
 					$.each(data, function(index, manufactures){
 						 statusHTML += "<option value=\'"+manufactures+"\'>"+manufactures+"</option>";
 					});
 					 statusHTML += "</select>";
 					$("#car_dropdown").html(statusHTML);
 					
-					$('select[name=cars]').chosen({width: "100%"});;
+					$('select[name=cars]').chosen({width: "50%"});
 					
 					$('select[name=cars]').on('change', function(evt, params) {
 				   		 console.log(params)
 				   		 console.log(evt)
 				   		 var user_make = params.selected;
 				   		 $("#car_dropdown").fadeOut(1000);
-				   		 $("#chosen_car").hide().html('<p>'+user_make+'</p>').fadeIn(1000);
-				   		 
+				   		 $('#car_wrapper').css('display', 'inline-block');
+				   		 $("#chosen_car").hide().html('<p>'+user_make+'</p>').delay(1000).fadeIn(1000);
 				   		 
 				   		 $.getJSON('php/cars.php?manufacturer='+user_make, function(data){
-				   		 	console.log(data);
-			   		 		});
-			   		 
+				   		 	var statusHTML = "<select name = 'model' data-placeholder='Choose your car model.'>";
+				   		 	statusHTML+= "<option></option>";
+				   		 	
+				   		 	$.each(data, function(index, manufacturer){
+				   		 		 statusHTML += "<option value=\'"+manufacturer.Model+' '+manufacturer.Description+"\'>"+manufacturer.Model+' '+manufacturer.Description+"</option>";
+				   		 	});
+
+				   		 	console.log(statusHTML);
+			   		 		statusHTML += "</select>"
+			   		 		
+
+
+			   		 		$("#make_dropdown").html(statusHTML);
+			   		 		$('select[name=model]').chosen({width: "50%"})
+
+			   		 		$('select[name=model]').on('change', function(evt2, params2) {
+							   		 console.log(params2)
+							   		 var user_model = params2.selected;
+							   		 $("#make_dropdown").fadeOut(1000);
+							   		 $('#make_wrapper').css('display', 'inline-block');
+							   		 $("#chosen_make").hide().html('<p>'+user_model+'</p>').delay(1000).fadeIn(1000);
+							   		 $.each(data, function(index, vehicle){
+										if(vehicle.Model+vehicle.Description === user_model && vehicle.Manufacturer.toLowerCase() === user_make.toLowerCase()){
+												
+												console.log (vehicle);
+								
+												car = vehicle; 
+											
+											
+											$.post('php/user_car.php', function(car){
+												console.log("success");
+											}).done(function(){
+												console.log("second success")
+											}).fail(function(){
+												console.log('error')
+											}).always(function(){
+												console.log('finished')
+											});
+
+											}
+										});
+									});
+							});
+						   		 
 					});
 				
 				});
 			 }
-$(document).ready(function(){
-	$('h1').fitText(0.8);
-	$('h2').fitText(3);
-	$('#logon').fitText(0.8); //made the button fittext
-	$("h3").fitText(7);
-}); 
+			 
+
 
 $(window).load(function(){
 		var hash_checker = window.location.hash;

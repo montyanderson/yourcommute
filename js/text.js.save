@@ -1,0 +1,5 @@
+$(document).ready(function() {
+	$("h1 > i").fitText("0.15");
+
+	
+});

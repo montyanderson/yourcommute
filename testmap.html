@@ -1,8 +1,14 @@
-
-    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<html>
+<head>
+  <title>testmap</title>
+  <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgjJ8ZIxlOYpJ9WNfgtLgCjlEQ2Mf_GRE&libraries=places&v=3.exp">
     </script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
     <form action="#">
     start:<input type="text" id="start" class="instyle"><br />
     end:<input type="text" id="end" class="instyle"><br />
@@ -16,7 +22,9 @@
     </form>
     <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
     <div id="prop">
-    <p class="">Total Distance: <span id="total"></span></p>
-    <p>Total carbon: <span id="total_c"></span></p>
-    <p>Fuel Cost: <span id="money_save"></span></p>
+    <p class="universal">Total Distance: <span id="total"></span></p>
+    <p class="car_only">Total carbon: <span id="total_c"></span></p>
+    <p class="car_only">Fuel Cost: <span id="money_save"></span></p>
   </div>
+</body>
+</html>

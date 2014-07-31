@@ -1,58 +1,6 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset = "UTF-8">
-		<title>yourcommute</title>
-		
-		<link rel="stylesheet" href="lib/animate.css/animate.min.css" />
-		<link rel="stylesheet" href="lib/normalize.css/normalize.css" />
-		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
-		<style type = "text/css">
-			#car_dropdown, #chosen_car, #make_dropdown, #chosen_make{
-			
-				width: 100%;
-			}
-
-			#car_container {
-				width: 60%;
-				margin:  auto;
-			}
-
-			
-		</style>
-		<link rel="stylesheet" href="lib/chosen.css" />
-		
-		
-		<script src="lib/jquery/jquery.min.js"></script>
-		<script src="lib/jquery-cookie/src/jquery.cookie.js"></script>
-		<script src="lib/FitText.js/jquery.fittext.js"></script>
-		<script src="lib/jquery.transit/jquery.transit.js"></script>
-		<script src="js/ajax.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/resize.js"></script>
-		<script src = "lib/chosen.jquery.js"></script>
-		
-		
-		
-	</head>
-	
-	<body>
-		<div id = "car_container">
-			<div id= "car_wrapper">
-					<div id="car_dropdown"></div>
-					<div id = "chosen_car"></div>
-			</div>
-
-			<div id = "make_wrapper">
-				<div id = "make_dropdown"></div>
-				<div id = "chosen_make"></div>
-			</div>
-
-			<div id = "fun"></div>
-		</div>
-		<script>
-			
-			 function startCarSearch(){
+var car;
+var login = false;
+ function startCarSearch(){
 			 $.getJSON('php/manufacturers.php', function(data){
 					var statusHTML = "<select name = 'cars' data-placeholder='Choose your car make.'>";
 					statusHTML+= "<option></option>";
@@ -62,14 +10,14 @@
 					 statusHTML += "</select>";
 					$("#car_dropdown").html(statusHTML);
 					
-					$('select[name=cars]').chosen({width: "75%"});
+					$('select[name=cars]').chosen({width: "50%"});
 					
 					$('select[name=cars]').on('change', function(evt, params) {
 				   		 console.log(params)
 				   		 console.log(evt)
 				   		 var user_make = params.selected;
 				   		 $("#car_dropdown").fadeOut(1000);
-				   		 $("#chosen_car").hide().css('background-color', 'red').html('<p>'+user_make+'</p>').delay(1000).fadeIn(1000);
+				   		 $("#chosen_car").hide().html('<p>'+user_make+'</p>').delay(1000).fadeIn(1000);
 				   		 
 				   		 
 				   		 $.getJSON('php/cars.php?manufacturer='+user_make, function(data){
@@ -79,8 +27,11 @@
 				   		 		 statusHTML += "<option value=\'"+manufacturer.Model+"\'>"+manufacturer.Model+' '+manufacturer.Description+"</option>";
 				   		 	});
 
+				   		 	console.log(statusHTML);
 			   		 		statusHTML += "</select>"
 			   		 		
+
+
 			   		 		$("#make_dropdown").html(statusHTML);
 			   		 		$('select[name=model]').chosen({width: "75%"})
 
@@ -92,7 +43,7 @@
 							   		 $("#chosen_make").hide().html('<p>'+user_model+'</p>').delay(1000).fadeIn(1000);
 
 							   	 
-							   		 
+							   		
 							   		 
 							   	
 						   		 
@@ -104,11 +55,39 @@
 				});
 			 }
 			 
-			 $('document').ready(function(){
-				startCarSearch();
+$(document).ready(function(){
+	$('h1').fitText(0.8);
+	$('h2').fitText(3);
+	$('#logon').fitText(0.8); //made the button fittext
+	$("h3").fitText(7);
+}); 
+
+$(window).load(function(){
+		var hash_checker = window.location.hash;
+		if (hash_checker){
+			console.log('It exists')
+
+			login = true;
+			profile();
+			
+			$('#logon').fadeOut(500, function() {
+				$(this).remove();
 			});
-		</script>
-	</body>
+			
+			$("#header").animate({
+				'margin-top': 0
+			}, 1000, 'swing');
+			
+			$('#smaller').animate({
+				'margin-top': '0.25%'
+				 
+			},1000, 'swing');
+			
+			$("#car_wrapper").fadeIn(500);
+
+			startCarSearch();
 
 
-</html>
+		
+		}
+});

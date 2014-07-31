@@ -1,13 +1,13 @@
-    var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService();
-    var map;
-    var check_load = false;
-    var waypts = [];
-    var check_no_input = true;
-    var startloc = new google.maps.LatLng(51.5000, 0.1167);
-    var carbon_p_km = 160;
-    var kmpg = 30 * 1.609344;
-    var p_litre = 130;
+    var directionsDisplay,
+    directionsService = new google.maps.DirectionsService(),
+    map,
+    check_load = false,
+    waypts = [],
+    check_no_input = true,
+    startloc = new google.maps.LatLng(51.5000, 0.1167),
+    carbon_p_km = 160,
+    kmpg = 30 * 1.609344,
+    p_litre = 130;
 
     function initialize() {
       var mapOptions = {
@@ -32,7 +32,6 @@
       google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
         computeTotalDistance(directionsDisplay.getDirections());
       });
-      calcRoute();
 
       var start_auto = document.getElementById('start');
       var end_auto = document.getElementById('end');
@@ -71,12 +70,16 @@
     }
 
     function calcRoute() {
-      var start = document.getElementById("start").value;
-      var end = document.getElementById("end").value;
-      var transport = document.getElementById("transport").value;
-      $("#calcroute").click(function() {
-        $("#prop").fadeIn("slow");
-      });
+      var start = document.getElementById("start").value,
+      end = document.getElementById("end").value,
+      transport = document.getElementById("transport").value,
+      selector = "#prop";
+      $(selector).fadeIn("slow");
+      if (transport == "DRIVING") {
+        $('.car_only').show("slow");
+    } else {
+        $('.car_only').hide("slow");
+    }
       if (transport == "TRANSIT") {
         check_load = false;
         waypts = [];
