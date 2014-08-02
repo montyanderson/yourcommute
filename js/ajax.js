@@ -6,13 +6,13 @@ function profile() {
 	$.ajax({
 		url: "php/profile.php",
 		success: function(result) {
-			user = JSON.parse(result);
+			user = $.parseJSON(result);
 			
 			
 			if (new_user === true){
-				$("#profile-name").text("Welcome to this website, "+user.name+". Please input your car information");
+				$("#profile-name").text("Welcome to this website, "+user.name);
 			}else{
-				$("#profile-name").text("Welcome back, "+user.name+". Please input your car information");
+				$("#profile-name").text("Welcome back, "+user.name);
 			}
 		}
 	});

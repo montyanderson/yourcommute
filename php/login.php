@@ -42,7 +42,7 @@ if ($user) {
 	}
 	
 	setcookie("new_user", $new_user, "0", "/");
-	
+	$_SESSION["yrs2014-login"] = true;
 	header("Location: /#login?".$status);
 } else {
 	$loginUrl = $facebook->getLoginUrl();

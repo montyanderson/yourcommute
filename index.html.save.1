@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="lib/chosen_v1.1.0/chosen.css" />
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>yourcommute</title>
+		
+		<link rel="stylesheet" href="lib/animate.css/animate.min.css" />
+		<link rel="stylesheet" href="lib/normalize.css/normalize.css" />
+		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/temp.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="lib/chosen_v1.1.0/chosen.css" />
+		
+		
+				
+		<script src="lib/jquery/jquery.min.js"></script>
+		<script src="lib/jquery-cookie/src/jquery.cookie.js"></script>
+		<script src="lib/FitText.js/jquery.fittext.js"></script>
+		<script src="lib/jquery.transit/jquery.transit.js"></script>
+		<script src="js/ajax.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/resize.js"></script>
+		<script src = "lib/chosen_v1.1.0/chosen.jquery.js"></script>
+		<script src = "js/text.js"></script>
+		
+	</head>
+	
+	
+	<body>
+		<div id = "background"></div>
+		<div id = "container">
+		
+			<div id = "header">
+				<h1>y<i class="fa fa-recycle" id = "smaller"></i>urcommute</h1>
+			</div>
+
+			<div id = "logon">
+				<a href = "php/login.php" class = "facebook_link"> <i class="fa fa-facebook-square"></i> Log in With Facebook</a>
+			</div>
+			
+		
+				<!---This div doesn't appear until the user has logged in-->
+				<div id = "after-login" style="display: none;">
+					<h2  id="profile-name">John Doe</h2>
+				</div>
+			
+			<div id = "car_container" style: ""> 
+					<div id= "car_wrapper">
+							<div id="car_dropdown"></div>
+							<div id = "chosen_car"></div>
+					</div>
+					<span id = "plus"><i class="fa fa-plus"></i></span>
+					<div id = "make_wrapper">
+						<div id = "make_dropdown"></div>
+						<div id = "chosen_make"></div>
+					</div>
+			</div>
+
+			<div id = 'filler'></div>
+		
+		<!--<div id="footer">
+			<h3>Made by
+				<a href="http://montyanderson.co.uk">Monty Anderson </a>,
+				<a href="joe.fm">Joe FM</a> 
+				<a href="#">Jacob Cons</a>
+			</h3>
+		</div>-->
+
+		
+	</body>
+</html>

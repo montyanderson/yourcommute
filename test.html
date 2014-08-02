@@ -8,17 +8,12 @@
 		<link rel="stylesheet" href="lib/normalize.css/normalize.css" />
 		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
 		<style type = "text/css">
-			#car_dropdown, #chosen_car, #make_dropdown, #chosen_make{
-			
-				width: 100%;
-			}
+		
+		.input{
+			margin: : 2%;
+			display: inline-block;
+		}
 
-			#car_container {
-				width: 60%;
-				margin:  auto;
-			}
-
-			
 		</style>
 		<link rel="stylesheet" href="lib/chosen.css" />
 		
@@ -37,77 +32,7 @@
 	</head>
 	
 	<body>
-		<div id = "car_container">
-			<div id= "car_wrapper">
-					<div id="car_dropdown"></div>
-					<div id = "chosen_car"></div>
-			</div>
-
-			<div id = "make_wrapper">
-				<div id = "make_dropdown"></div>
-				<div id = "chosen_make"></div>
-			</div>
-
-			<div id = "fun"></div>
-		</div>
-		<script>
-			
-			 function startCarSearch(){
-			 $.getJSON('php/manufacturers.php', function(data){
-					var statusHTML = "<select name = 'cars' data-placeholder='Choose your car make.'>";
-					statusHTML+= "<option></option>";
-					$.each(data, function(index, manufactures){
-						 statusHTML += "<option value=\'"+manufactures+"\'>"+manufactures+"</option>";
-					});
-					 statusHTML += "</select>";
-					$("#car_dropdown").html(statusHTML);
-					
-					$('select[name=cars]').chosen({width: "75%"});
-					
-					$('select[name=cars]').on('change', function(evt, params) {
-				   		 console.log(params)
-				   		 console.log(evt)
-				   		 var user_make = params.selected;
-				   		 $("#car_dropdown").fadeOut(1000);
-				   		 $("#chosen_car").hide().css('background-color', 'red').html('<p>'+user_make+'</p>').delay(1000).fadeIn(1000);
-				   		 
-				   		 
-				   		 $.getJSON('php/cars.php?manufacturer='+user_make, function(data){
-				   		 	var statusHTML = "<select name = 'model' data-placeholder='Choose your car model.'>";
-				   		 	statusHTML+= "<option></option>";
-				   		 	$.each(data, function(index, manufacturer){
-				   		 		 statusHTML += "<option value=\'"+manufacturer.Model+"\'>"+manufacturer.Model+' '+manufacturer.Description+"</option>";
-				   		 	});
-
-			   		 		statusHTML += "</select>"
-			   		 		
-			   		 		$("#make_dropdown").html(statusHTML);
-			   		 		$('select[name=model]').chosen({width: "75%"})
-
-			   		 		$('select[name=model]').on('change', function(evt2, params2) {
-							   		 console.log(params2)
-							   		 var user_model = params2.selected;
-							   		 $("#make_dropdown").fadeOut(1000);
-							   		 $('#make_wrapper, #car_wrapper').css('display', 'inline-block');
-							   		 $("#chosen_make").hide().html('<p>'+user_model+'</p>').delay(1000).fadeIn(1000);
-
-							   	 
-							   		 
-							   		 
-							   	
-						   		 
-								});
-									});
-						   		 
-					});
-				
-				});
-			 }
-			 
-			 $('document').ready(function(){
-				startCarSearch();
-			});
-		</script>
+		<div id = 'coffee_save'></div>
 	</body>
 
 
