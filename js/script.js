@@ -97,14 +97,9 @@ function startCarSearch(){
 							   		 $.each(data, function(index, vehicle){
 							   		 	console.log(vehicle.Model+vehicle.Description)
 										if(vehicle.Model+' '+vehicle.Description === user_model && vehicle.Manufacturer.toLowerCase() === user_make.toLowerCase()){
-												
-												console.log (vehicle);
+					
 								
 												car = vehicle; 
-
-												console.log(car)
-									
-												console.log(car['Fuel Type']);
 										
 												getPetrolData();
 
@@ -112,6 +107,7 @@ function startCarSearch(){
 													$('#chosen_car, #chosen_pref').fadeOut(1000);
 													$('#submit_button').fadeOut(1000);
 													$('#map_container').delay(1000).fadeIn(1000)
+													console.log("XYZXYZXYZ");
 													initialize();
 												})
 												
@@ -168,6 +164,7 @@ var directionsDisplay,
     vol_ballon = 6254.99980497;
 
 function initialize() {
+	console.log("UUUUTEST");
 
     var mapOptions = {
 	    zoom:5,
@@ -179,6 +176,7 @@ function initialize() {
       };
       map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
       directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+      
 
       
 
@@ -224,7 +222,6 @@ function initialize() {
           check_no_input = true;
       });
       });
-      google.maps.event.trigger(map, "resize");
     }
 
     function calcRoute() {
@@ -286,8 +283,8 @@ function initialize() {
       $('#treeOffset').html(' '+trees)
       $('#lattes').html(' '+lattes_per_week+' ')
       $('#secondaryTransport').html(' '+user_pref.UserSecondaryTransport)
-  		
-
+  	
+  	
       $('#data_button').click(function(){
 	    	console.log('clicked');
 	    	
@@ -295,9 +292,8 @@ function initialize() {
 	    	$('#map_container').addClass('animated fadeOut')
 	    	$('#map_container').hide();
 	    	$('#data_container').css('display', 'block').addClass('animated bounceInRight');
-
+				
+			
    		 });
-      console.log(info)
-      
-    }
 
+    }

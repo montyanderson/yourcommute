@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>yourcommute</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Monty Anderson, Jacob Cons, Joe FM" />
+
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/script.js"></script>
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<div id="background-image"></div>
+
+<div id="impress">
+
+    <div class="step" data-x="0" data-y="0">
+        yourcommute
+    </div>
+
+    <div class="step" data-x="2500" data-y="2500" data-z="8000" data-scale="3" data-rotate="0" data-rotate-y="10"> 
+        Because <i>yourcommute</i> matters.
+    </div>
+
+    <div class="step" data-x="-2500" data-y="-2500" data-z="8000" data-scale="3" data-rotate="0" data-rotate-y="45">
+        <h2>For the front end, we used HTMl, JS, jQuery</h2>
+    </div>
+
+
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

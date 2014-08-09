@@ -7,7 +7,8 @@ error_reporting(-1);
 
 header("Content-type: text/plain");
 
-if($_SESSION["yrs2014-login"] == "true") {} else {
+if(isset($_SESSION["yrs2014-login"]) && 
+$_SESSION["yrs2014-login"] == "true") {} else {
 	exit();
 }
 

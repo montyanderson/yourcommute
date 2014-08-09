@@ -92,7 +92,7 @@ h1 {
 }
 
 #map_container {
-	height: 500px;
+	height: 450px;
 	margin: 5%, auto;
 }
 
@@ -106,11 +106,11 @@ h1 {
 }
 
 #map-canvas {
-	height: 90%;
-	margin: 0px;
-	padding: 0px;
-	border: 1px solid black;
-	margin: 5% 0;
+	height: 450px; 
+	margin: 0px; 
+	padding: 0px; 
+	border: 1px solid black; 
+	margin: 5% 0; 
 
 }
 .instyle {
@@ -120,10 +120,6 @@ h1 {
 	display:none;
 	
 } 
-#map {
-	height:400px;
-
-}
 
 input, textarea { 
     padding: 9px; 
@@ -168,7 +164,7 @@ input[type="button"] {
 	
 }
 
-
+ 
 #logon:hover {
 
 	background: #2980b9;
@@ -184,4 +180,6 @@ h3 {
 	font-size: 100%;	
 }
 
-
+i {
+	margin-right: 2.5%;
+}

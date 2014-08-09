@@ -1,0 +1,57 @@
+body {
+	background: white;
+	font-family: Helvetica;	
+}
+
+#background-image {
+	background: url("../img/city-wallpaper-11.jpg");
+
+	position: fixed;
+  	left: 0;
+  	right: 0;
+  	z-index: -1;
+
+  	display: block;
+  	width: 100%;
+  	height: 100%;
+
+  	-webkit-filter: blur(3px);
+  	-moz-filter: blur(3px);
+  	-o-filter: blur(3px);
+  	-ms-filter: blur(3px);
+  	filter: blur(3px);
+}
+
+.step {
+  text-align: center;
+	font-size: 5em;
+  font-size: 6em;
+}
+
+.step > *, .step > * > * {
+  display: inline;
+}
+
+.fa-database {
+	color: #2c3e50;
+}
+
+.fa-html5 {
+	color: #e74c3c;
+}
+
+.fa-code {
+	color: #f39c12;
+}
+
+.fa-linux {
+	color: #2980b9;
+}
+
+.fa-coffee {
+	color: #4E2E28;
+}
+
+.fa-map-marker {
+	color: #1abc9c;
+}
